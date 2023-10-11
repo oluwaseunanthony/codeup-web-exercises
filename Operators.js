@@ -7,7 +7,7 @@ console.log('1' + 2)
 console.log("" ** 4)
 
 typeof '1' + 2
- //
+ //string2
  console.log(typeof '1' + 2)
 
 6 % 4
@@ -15,10 +15,10 @@ typeof '1' + 2
 console.log(6 % 4)
 
 
-'3 + 4 is ' + 3 + 4
+'3 + 4 is ' + (3 + 4)
 // how could you make this produce the correct output?
-//
-console.log('3 + 4 is ' + 3 + 4)
+//add para
+console.log('3 + 4 is ' + (3 + 4))
 
 0 < 0
 //false
