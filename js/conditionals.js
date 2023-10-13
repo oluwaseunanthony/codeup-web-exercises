@@ -30,7 +30,6 @@ function analyzeColor(color) {
         return "I don't know anything about " + color;
     }
 }
-console.log(analyzeColor(randomColor));
 
 // Don't change the next two lines!
 // These lines create two variables for you:
@@ -44,19 +43,32 @@ const randomColor = colors[Math.floor(Math.random() * colors.length)];
  * Pass the `randomColor` variable to your 'analyzeColor' function and console.log the results.
  * You should see a different message every time you refresh the page
  */
+//console.log(analyzeColor(randomColor));
 
 /**
  * TODO:
  * Comment out the code above, and refactor your function to use a switch-case statement
  */
+function analyzeColorSwitch(color) {
+    switch (color) {
+        case 'blue':
+            return "blue is the color of the sky";
+        case 'red':
+            return "Strawberries are red";
+        default:
+            return "I don't know anything about " + color;
+    }
+}
 
+console.log(analyzeColorSwitch(randomColor));
 /**
  * TODO:
  * Prompt the user for a color when the page loads, and pass the input from the
  * user to your `analyzeColor` function. Alert the return value from your
  * function to show it to the user.
  */
-
+const userColor = prompt("Please enter a color:");
+alert(analyzeColorSwitch(userColor));
 /* ########################################################################## */
 
 /**
