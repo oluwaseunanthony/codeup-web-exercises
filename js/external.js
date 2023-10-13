@@ -1,9 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>External JS</title>
-</head>
-<body>
-<script src="js/external.js"></script>
-</body>
-</html>
+alert('Welcome to my Website!');
+
+
+let userInput = prompt('What is your favorite color?');
+console.log(`The user entered: ${userInput}`);
+alert(`Great, ${userInput} is my favorite color too!`);
