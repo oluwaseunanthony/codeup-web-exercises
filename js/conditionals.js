@@ -21,6 +21,16 @@
  * Test your function by passing various string literals to it and
  * console.logging the function's return value
  */
+function analyzeColor(color) {
+    if (color === 'blue') {
+        return "blue is the color of the sky";
+    } else if (color === 'red') {
+        return "Strawberries are red";
+    } else {
+        return "I don't know anything about " + color;
+    }
+}
+console.log(analyzeColor(randomColor));
 
 // Don't change the next two lines!
 // These lines create two variables for you:
