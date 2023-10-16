@@ -68,34 +68,46 @@
 // ? -> represents put "if" condition
 // : -> represent "else" condition
 
-let name="Bob";
-let greeting =(name==="Bob")? ("Hello,"+name ): ("Hello Stranger!");
-console.log(greeting);
+// let name="Bob";
+// let greeting =(name==="Bob")? ("Hello,"+name ): ("Hello Stranger!");
+// console.log(greeting);
+//
+// let currentCurrentDay=currentDay==='monday'||currentDay==='tuesday'||currentDay==='wednesday'?" I love "+currentDay:currentDay+" is not a validday":
+// console.log(currentCurrentDay)
+//
+// // Switch Statement example
+// let daysOfWeek="Monday":
+//
+// switch(daysOfWeek){
+//     case "Monday":
+//     case "Tuesday":
+//     case "Wednesday":
+//     case "Thursday":
+//     case "Friday":
+//         console.log("It's a weekday");
+//         break;
+//     case "Saturday":
+//     case"Sunday":
+//         console.log("It's a weekend.")
+//         break;
+//
+//     default:
+//         console.log("Invalid day of the week");
+// }
 
-let currentCurrentDay=currentDay==='monday'||currentDay==='tuesday'||currentDay==='wednesday'?" I love "+currentDay:currentDay+" is not a validday":
-console.log(currentCurrentDay)
 
-// Switch Statement example
-let daysOfWeek="Saturday":
 
-switch(daysOfWeek){
-    case "Monday":
-    case "Tuesday":
-    case "Wednesday":
-    case "Thursday":
-    case "Friday":
-        console.log("It's a weekday");
-        break;
-    case "Saturday":
-    case"Sunday":
-        console.log("It's a weekend.")
-        break;
+//  using function and if/else
 
-    default:
-        console.log("Invalid day of the week");
+function sayHello(name){
+    if (name.length<=20){
+        return `hello, ${name}`
+    } else {
+        return "That is way too long of a name."
+    }
 }
 
-
+console.log(sayHello("anthony"));
 
 
 "use strict";
