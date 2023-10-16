@@ -1,112 +1,3 @@
-// let age = 12;
-// if (age>= 16){
-//     console.log("You're eligible to drive")
-// }
-//
-// if (age<16){
-//     console.log("You can not drive")
-// }
-// // same example with else statement
-//
-// if (age>= 16){
-//     console.log("You can drive")
-// } else {
-//     console.log("grow up")
-// }
-//
-// let currentDay=prompt("Whats the day today?").toLowerCase()
-//
-// if(currentDay==='monday'|| currentDay==='tuesday'||currentDay==='wednesday'){
-//     console.log('I love '+ currentDay)
-// } else {
-//     console.log(currentDay + ' is not a valid day')
-// }
-//
-// let letsPlay= confirm(' Do you want to play')
-//
-// if (letsPlay){
-//     console.log("Great lets play xyz")
-// } else {
-//     console.log(" Maybe next time ")
-// }
-//
-// const username="user";
-// const password ='password';
-//
-// // prompt the user to enter a username and a password
-// const inputedUserName= prompt("please enter username")
-// const inputedPassword = prompt("Please enter a password")
-//
-// // next i want to console.log('You're logged in') if username, inputedUsername && password,  inputedPassowrd match
-//
-// if (username === inputedUserName && password === inputedPassword){
-//     console.log("You're logged in!")
-// } else if (username!== inputedUserName && password!==inputedPassword){
-//     console.log("Incorrect username and password")
-// } else if (username !== inputedUserName){
-//     console.log("Incorrect Username")
-// } else if (password !== inputedPassword){
-//     console.log("incorrect password")
-// } else {
-//     console.log("Unexpected error")
-// }
-
-
-// Nest Conditions example
-//
-// if (username===inputedUsername){
-//     if(password=== inputedPassword){
-//         console.log(("logged in"))
-//     }else {
-//         console.log("Incorrect password")
-//     }
-// } else {
-//     console.log("Invalid username")
-// }
-
-// Ternary Operator
-// ? -> represents put "if" condition
-// : -> represent "else" condition
-
-// let name="Bob";
-// let greeting =(name==="Bob")? ("Hello,"+name ): ("Hello Stranger!");
-// console.log(greeting);
-//
-// let currentCurrentDay=currentDay==='monday'||currentDay==='tuesday'||currentDay==='wednesday'?" I love "+currentDay:currentDay+" is not a validday":
-// console.log(currentCurrentDay)
-//
-// // Switch Statement example
-// let daysOfWeek="Monday":
-//
-// switch(daysOfWeek){
-//     case "Monday":
-//     case "Tuesday":
-//     case "Wednesday":
-//     case "Thursday":
-//     case "Friday":
-//         console.log("It's a weekday");
-//         break;
-//     case "Saturday":
-//     case"Sunday":
-//         console.log("It's a weekend.")
-//         break;
-//
-//     default:
-//         console.log("Invalid day of the week");
-// }
-
-
-//  using function and if/else
-
-function sayHello(name) {
-    if (name.length <= 20) {
-        return `hello, ${name}`
-    } else {
-        return `That is way too long of a ${name}.`
-    }
-}
-
-console.log(sayHello("anthony"));
 
 
 "use strict";
@@ -257,29 +148,40 @@ alert(`Your lucky number is ${luckyNumber}. Your total bill before discount is $
  * HINT: The way we prompt for a value could be improved
  */
 
+
+// let userConfirmed = confirm(" would like to enter a number?")
+
 function letsPlay() {
+    let userConfirmed = confirm(" would like to enter a number?")
+
     if (userConfirmed) {
         const userInput = prompt("Enter a number:");
 
         if (userInput) {
             let number = parseFloat(userInput);
 
+
             const isEven = number % 2 === 0;
+            const isOdd = number % 2 !== 0;
             const plus100 = number + 100;
             const isPositive = number >= 0 ? "positive" : "negative";
 
+            (isNaN(userInput))
+
+            alert("Invalid input: Not a number.");
             alert(`Number is even: ${isEven}`);
+            alert(`Number is Odd: ${isOdd}`);
             alert(`Number + 100 is: ${plus100}`);
             alert(`Number is ${isPositive}`);
-        } else {
+        } else if (isNaN(userInput)) {
             alert("Invalid input: Not a number.");
         }
     }
+
 }
 
-let userConfirmed = confirm(" would like to enter a number?")
-
-if (userConfirmed) {
-    letsPlay()
-}
+letsPlay()
+// if (userConfirmed) {
+//     letsPlay()
+// }
 
