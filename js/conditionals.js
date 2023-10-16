@@ -96,14 +96,13 @@
 // }
 
 
-
 //  using function and if/else
 
-function sayHello(name){
-    if (name.length<=20){
+function sayHello(name) {
+    if (name.length <= 20) {
         return `hello, ${name}`
     } else {
-        return "That is way too long of a name."
+        return `That is way too long of a ${name}.`
     }
 }
 
@@ -155,7 +154,9 @@ const randomColor = colors[Math.floor(Math.random() * colors.length)];
  * Pass the `randomColor` variable to your 'analyzeColor' function and console.log the results.
  * You should see a different message every time you refresh the page
  */
+
 //console.log(analyzeColor(randomColor));
+
 
 /**
  * TODO:
@@ -181,6 +182,7 @@ console.log(analyzeColorSwitch(randomColor));
  */
 const userColor = prompt("Please enter a color:");
 alert(analyzeColorSwitch(userColor));
+
 /* ########################################################################## */
 
 /**
@@ -229,8 +231,11 @@ function calculateTotal(luckyNumber, totalAmount) {
  * and alerts to display to the user what their lucky number was, what their
  * price before the discount was, and what their price after the discount is.
  */
- // Generate a random number between 0 and 6
- const luckyNumber = Math.floor(Math.random() * 6);
+    // Generate a random number between 0 and 6
+const luckyNumber = Math.floor(Math.random() * 6);
+const userBill = parseFloat(prompt("Please enter your total bill:"))
+alert(`Your lucky number is ${luckyNumber}. Your total bill before discount is ${userBill}. Your total after discount ${calculateTotal(luckyNumber, userBill)}`)
+
 
 /**
  * TODO:
@@ -242,6 +247,7 @@ function calculateTotal(luckyNumber, totalAmount) {
  * - what the number plus 100 is
  * - if the number is negative or positive
  *
+ *
  * Do *NOT* display any of the above information
  * if the user enters a value that is not of the number data type.
  * Instead, use an alert to inform them of the incorrect input data type.
@@ -250,3 +256,30 @@ function calculateTotal(luckyNumber, totalAmount) {
  * Can you refactor your code to use functions?
  * HINT: The way we prompt for a value could be improved
  */
+
+function letsPlay() {
+    if (userConfirmed) {
+        const userInput = prompt("Enter a number:");
+
+        if (userInput) {
+            let number = parseFloat(userInput);
+
+            const isEven = number % 2 === 0;
+            const plus100 = number + 100;
+            const isPositive = number >= 0 ? "positive" : "negative";
+
+            alert(`Number is even: ${isEven}`);
+            alert(`Number + 100 is: ${plus100}`);
+            alert(`Number is ${isPositive}`);
+        } else {
+            alert("Invalid input: Not a number.");
+        }
+    }
+}
+
+let userConfirmed = confirm(" would like to enter a number?")
+
+if (userConfirmed) {
+    letsPlay()
+}
+
