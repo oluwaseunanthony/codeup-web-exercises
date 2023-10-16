@@ -1,3 +1,19 @@
+let age = 12;
+if (age>= 16){
+    console.log("You're eligible to drive")
+}
+
+if (age<16){
+    console.log("You can not drive")
+}
+// same example with else statement
+
+if (age>= 16){
+    console.log("You can drive")
+} else {
+    console.log("grow up")
+}
+
 "use strict";
 
 /* ########################################################################## */
