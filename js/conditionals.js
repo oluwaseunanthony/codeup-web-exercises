@@ -75,7 +75,25 @@ console.log(greeting);
 let currentCurrentDay=currentDay==='monday'||currentDay==='tuesday'||currentDay==='wednesday'?" I love "+currentDay:currentDay+" is not a validday":
 console.log(currentCurrentDay)
 
+// Switch Statement example
+let daysOfWeek="Saturday":
 
+switch(daysOfWeek){
+    case "Monday":
+    case "Tuesday":
+    case "Wednesday":
+    case "Thursday":
+    case "Friday":
+        console.log("It's a weekday");
+        break;
+    case "Saturday":
+    case"Sunday":
+        console.log("It's a weekend.")
+        break;
+
+    default:
+        console.log("Invalid day of the week");
+}
 
 
 
