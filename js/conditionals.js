@@ -90,6 +90,24 @@ alert(analyzeColorSwitch(userColor));
  * Test your function by passing it various values and checking for the expected
  * return value.
  */
+function calculateTotal(luckyNumber, totalAmount) {
+    switch (luckyNumber) {
+        case 0:
+            return totalAmount;
+        case 1:
+            return totalAmount * 0.9; // 10% discount
+        case 2:
+            return totalAmount * 0.75; // 25% discount
+        case 3:
+            return totalAmount * 0.65; // 35% discount
+        case 4:
+            return totalAmount * 0.5; // 50% discount
+        case 5:
+            return 0; // Everything for free
+        default:
+            return "Invalid lucky number";
+    }
+}
 
 /**
  * TODO:
@@ -99,8 +117,8 @@ alert(analyzeColorSwitch(userColor));
  * and alerts to display to the user what their lucky number was, what their
  * price before the discount was, and what their price after the discount is.
  */
-// Generate a random number between 0 and 6
-// const luckyNumber = Math.floor(Math.random() * 6);
+ // Generate a random number between 0 and 6
+ const luckyNumber = Math.floor(Math.random() * 6);
 
 /**
  * TODO:
