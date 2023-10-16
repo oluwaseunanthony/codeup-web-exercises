@@ -24,9 +24,9 @@ console.log(helloMessage);
  * variable to the 'sayHello' function. You should see the same output in the
  * console.
  */
-var myName = "Oluwaseun Anthony";
-var helloMessage2 = sayHello(myName);
-console.log(helloMessage2);
+let myName = "Oluwaseun Anthony";
+let helloMessage2 = sayHello(myName);
+console.log(sayHello(myName));
 
 // Don't modify the following line, it generates a random number between 1 and 3
 // and stores it in a variable named random
@@ -74,9 +74,9 @@ function calculateTip(tipPercentage, billTotal){
  * prompt the user for the bill total and a percentage they would like to tip,
  * then display the dollar amount they should tip
  */
-var bill = parseFloat(prompt("80"));
-var tipPercentage = parseFloat(prompt("20"));
-var tipAmount = calculateTip(tipPercentage, bill);
+let bill = parseFloat(prompt("what is the amount of your bill ?"));
+let tipPercentage = parseFloat(prompt("what would like to tip?"));
+let tipAmount = calculateTip(tipPercentage, bill);
 alert("You should tip $" + tipAmount.toFixed(2));
 /**
  * TODO:
