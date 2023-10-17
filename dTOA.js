@@ -142,3 +142,92 @@ console.log(!!"false")
 !!"0"
 //true
 console.log(!!"0")
+
+// ************* Question 2 ******************
+
+let sample = "Hello Codeup";
+console.log(sample.length);
+
+// Uppercase
+console.log(sample.toUpperCase());
+
+// Lowercase
+console.log(sample.toLocaleLowerCase());
+
+// concatenate sample to add students
+sample += sample +  " Students"
+console.log(sample)
+
+//  replace students with class
+console.log(sample.replace("Students" , "Class"))
+
+// find lowercase c
+console.log(sample.indexOf("c")); // we get back -1 because lowercase c doesn't exist in the sample variable
+
+// find uppercase C
+console.log(sample.indexOf("C"));
+
+// retrieve a substring Codeup
+console.log(sample.substring(sample.indexOf("C"), 1 + sample.indexOf("p")))
+// another solution
+console.log(sample.substring(6, 12))
+
+
+// ************* Question 3 ******************
+
+// Part 1: movies
+// renter little mermaid for 3 days
+// Brother bear for 5 days
+// Hercules 1 days
+
+let price = 3;
+
+let littleMermaid = 3;
+let brotherBear = 5;
+let hercules = 1;
+
+let littleMermaidCost = littleMermaid * price;
+// console.log(littleMermaidCost)
+let brotherBearCost = brotherBear * price;
+let herculesCost = hercules * price;
+
+let totalCost = littleMermaidCost + brotherBearCost + herculesCost
+console.log(totalCost)
+
+// Part 2: Contractor question
+let googlePerHour = 400;
+let amazonPerHour = 380;
+let facebookPerHour = 350;
+
+let googleHoursWorked = 6;
+let amazonHoursWorked = 4;
+let facebookHoursWorked = 10;
+
+let totalPay =
+    (googleHoursWorked * googlePerHour) +
+    (amazonHoursWorked * amazonPerHour) +
+    (facebookHoursWorked * facebookPerHour);
+
+console.log(totalPay)
+
+// template literal version of the same result
+console.log(`Your total pay is $${totalPay}`)
+
+// Part 4: user and password
+let username = 'codeup';
+let password = 'notastrongpassword';
+
+let passLength = password.length > 4
+console.log(passLength);
+
+// only solution
+let notInclude2 = !password.includes(username);
+console.log(notInclude2)
+
+// check if 20 characters
+let characterCheck = username.length < 21;
+console.log(characterCheck)
+
+let whiteSpace = (username.trim() === username) && (password.trim() === password);
+
+console.log(whiteSpace)
