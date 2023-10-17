@@ -32,7 +32,7 @@ function analyzeColor(color) {
         return "I don't know anything about " + color;
     }
 }
-console.log(analyzeColor(color))
+// console.log(analyzeColor(color))
 
 // Don't change the next two lines!
 // These lines create two variables for you:
@@ -114,7 +114,7 @@ function calculateTotal(luckyNumber, totalAmount) {
             return "Invalid lucky number";
     }
 }
-console.log(calculateTotal(luckyNumber, totalAmount))
+// console.log(calculateTotal(luckyNumber, totalAmount))
 /**
  * TODO:
  * Uncomment the line below to generate a random number between 0 and 5.
@@ -126,7 +126,7 @@ console.log(calculateTotal(luckyNumber, totalAmount))
     // Generate a random number between 0 and 6
 const luckyNumber = Math.floor(Math.random() * 6);
 const userBill = parseFloat(prompt("Please enter your total bill:"))
-alert(`Your lucky number is ${luckyNumber}. Your total bill before discount is ${userBill}. Your total after discount ${calculateTotal(luckyNumber, userBill)}`)
+alert(`Your lucky number is ${luckyNumber}, Your total bill before discount is ${userBill}, Your total after discount ${calculateTotal(luckyNumber, userBill)}`)
 
 
 /**
@@ -153,7 +153,7 @@ alert(`Your lucky number is ${luckyNumber}. Your total bill before discount is $
 // let userConfirmed = confirm(" would like to enter a number?")
 
 function letsPlay() {
-    let userConfirmed = confirm(" would like to enter a number?")
+    let userConfirmed = confirm(" would you like to enter a number?")
 
     if (userConfirmed) {
         const userInput = prompt("Enter a number:");
@@ -169,7 +169,7 @@ function letsPlay() {
 
             (isNaN(userInput))
 
-            alert("Invalid input: Not a number.");
+            // alert("Invalid input: Not a number.");
             alert(`Number is even: ${isEven}`);
             alert(`Number is Odd: ${isOdd}`);
             alert(`Number + 100 is: ${plus100}`);
