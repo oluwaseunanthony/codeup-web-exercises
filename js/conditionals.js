@@ -32,6 +32,7 @@ function analyzeColor(color) {
         return "I don't know anything about " + color;
     }
 }
+console.log(analyzeColor(color))
 
 // Don't change the next two lines!
 // These lines create two variables for you:
@@ -113,7 +114,7 @@ function calculateTotal(luckyNumber, totalAmount) {
             return "Invalid lucky number";
     }
 }
-
+console.log(calculateTotal(luckyNumber, totalAmount))
 /**
  * TODO:
  * Uncomment the line below to generate a random number between 0 and 5.
