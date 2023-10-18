@@ -1,0 +1,1 @@
+This text file is only visible on the git-practice branch. The only way i can see it in the main branch is to merge, which we are not doin..
