@@ -1,12 +1,16 @@
-//1. function showMultiplicationTable(number) {
-//     for (let i = 1; i <= 10; i++) {
-//         console.log(`${number} x ${i} = ${number * i}`);
-//     }
-// }
+//1.
+function showMultiplicationTable(number) {
+    for (let i = 1; i <= 10; i++) {
+        console.log(`${number} x ${i} = ${number * i}`);
+    }
+}
 //
 // // Test the function
-// showMultiplicationTable(8);
-//
+showMultiplicationTable(7);
+
+
+
+
 // for(let i=20; i <200; i++){
 //     if (i % 2 === 0) {
 //         console.log(`even number ${i}`);
@@ -21,7 +25,7 @@
 // Declare the maximum value of the range
 // Use the formula Math.floor(Math.random() *(max - min + 1) + min) to generate values with the min and the max value inclusive.
 
-for (let i = 1; i <= 10; i++) {
+for (let i = 0; i <= 10; i++) {
     // This loop runs 10 times, starting from i = 1 and ending when i reaches 10.
 
     // Generate a random number between 20 and 200, inclusive.
@@ -49,7 +53,15 @@ for (let i = 1; i <= 9; i++) {
 }
 
 
-//4.
+// 4.
+for (let i=1;i<10;i++){
+    console.log(i.toString().repeat(1))
+}
+
+//
+
+
+//5.
 for (let i = 100; i >= 5; i -= 5) {
     console.log(i);
 }
