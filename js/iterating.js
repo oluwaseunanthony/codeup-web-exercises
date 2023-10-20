@@ -41,6 +41,15 @@
     names.forEach(function (name) {
         console.log(name);
     });
+    // same as above in forEach loop with arrow function
+    names.forEach(name=>console.log(name))
+
+    // another example of forEach
+
+    for(let name of names){
+        console.log(name)
+    }
+
     /**
      * TODO:
      * Create the following three functions, each will accept an array and
@@ -57,12 +66,16 @@
     function first(arr) {
         return arr[0];
     }
+    console.log(first(names))
 
     function second(arr) {
         return arr[1];
     }
+    console.log(first(names))
 
     function last(arr) {
         return arr[arr.length - 1];
     }
+    console.log(first(names))
+
 })();
