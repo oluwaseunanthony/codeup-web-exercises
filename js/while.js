@@ -1,13 +1,13 @@
 // // 1.
 //
-// let number = 2;
-// while (number <= 65536) {
-//     console.log(number);
-//     number *= 2;
-// }
-// console.log('Do While Loop');
-//
-// //2.
+let number = 2;
+while (number <= 65536) {
+    console.log(number);
+    number = number * 2;
+}
+console.log('Do While Loop');
+
+//2.
 // let allCones = Math.floor(Math.random() * 51) + 50; // Random number between 50 and 100
 // console.log(`Starting with ${allCones} ice cream cones`);
 //
