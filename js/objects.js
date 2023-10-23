@@ -18,6 +18,11 @@
     }
     console.log(person)
 
+    //const person()={}
+    // person.firstName=
+
+
+
     /**
      * TODO:
      * Add a sayHello method to the person object that returns a greeting using
@@ -100,21 +105,23 @@ function sayHello(){
      * > console.log(books[0].author.lastName) // "Adams"
      */
 
-
-     books = [
+let books = [
         {
             title: "The Salmon of Doubt",
-            author: { firstName: "Douglas", lastName: "Adams" }
+            author: { firstName: "Douglas",
+                lastName: "Adams" }
         },
         {
             title: "Walkaway",
-            author: { firstName: "Cory", lastName: "Doctorow" }
+            author: { firstName: "Cory",
+                lastName: "Doctorow" }
         },
         {
             title: "A Brief History of Time",
-            author: { firstName: "Stephen", lastName: "Hawking" }
+            author: { firstName: "Stephen",
+                lastName: "Hawking" }
         },
-        // Add more books here
+        // Add  books here
     ];
 
 
@@ -164,7 +171,9 @@ function sayHello(){
             title: title,
             author: { firstName: authorFirstName, lastName: authorLastName }
         };
-    }
+    } return books
+
+    books.push(createBook("The Great"))
 
     function showBookInfo(book, index) {
         console.log(`Book # ${index + 1}`);
@@ -172,17 +181,17 @@ function sayHello(){
         console.log(`Author: ${book.author.firstName} ${book.author.lastName}`);
         console.log('---');
     }
-
-// Refactor the books array creation to use createBook function
-    let books = [
-        createBook("The Salmon of Doubt", "Douglas", "Adams"),
-        createBook("Walkaway", "Cory", "Doctorow"),
-        createBook("A Brief History of Time", "Stephen", "Hawking"),
-        // Add more books here using createBook
-    ];
+//
+// // Refactor the books array creation to use createBook function
+//     let books = [
+//         createBook("The Salmon of Doubt", "Douglas", "Adams"),
+//         createBook("Walkaway", "Cory", "Doctorow"),
+//         createBook("A Brief History of Time", "Stephen", "Hawking"),
+//         // Add more books here using createBook
+//     ];
 
 // Loop through books and show book info
-    books.forEach(showBookInfo);
+//     books.forEach(showBookInfo);
 
 
 })();
