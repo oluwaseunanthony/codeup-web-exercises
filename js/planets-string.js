@@ -10,9 +10,9 @@
      * planetsArray.
      * console.log planetsArray to check your work
      */
-    planetsArray = planetsString.split("|");
+     planetsArray = planetsString.split("|");
     console.log(planetsArray);
-    // console.log(planetsArray);
+    // console.log(planetsArray);" | delimiter"
 
     /**
      * TODO:
@@ -21,13 +21,13 @@
      *
      *
      * BONUS:
-     * Create another string that would display your planets in an undordered
+     * Create another string that would display your planets in an unordered
      * list. You will need an opening AND closing <ul> tags around the entire
      * string, and <li> tags around each planet.
      */
 
-    let brSeparatedString = planetsArray.join("<br>");
-    console.log(brSeparatedString);
+    // let brSeparatedString = planetsArray.join("<br>");
+    // console.log(brSeparatedString);
 
     // Create a string with an unordered list
     let ulString = "<ul>";
@@ -37,4 +37,13 @@
     ulString += "</ul>";
     console.log(ulString);
 
+//        let planetsString1 = planetsArray.join(`
+// <br>
+// `);
+//     console.log(planetsString1);
+//
+//     let planetsString2 = `<ul>
+// <li>${planetsArray.join(`</li>
+// <li>`)}</li>
+// </ul>`;
 })();
