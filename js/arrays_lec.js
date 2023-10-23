@@ -53,13 +53,13 @@ const numbers = [1, 2, 3, 4];
 //     console.log('The shape at index ' + i + ' is: ' + shapes[i]);
 // }
 
-//using for of loop to iterate through an array
+// //using for of loop to iterate through an array
 // const iterable = [1, 2, 3, 4, 5];
-//
+// //  ELement is each li in an arrray
 // for (let element of iterable) {
 //     console.log(element)
 // }
-
+//
 // for(let num of numbers){
 //     console.log(num)
 // }

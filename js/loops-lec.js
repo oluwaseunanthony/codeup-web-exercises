@@ -43,28 +43,28 @@
 //     num += 5;
 // } while(num < 100);
 
-const secretNumber = 7;
-let guess;
-let attempt = 0;
+// const secretNumber = 7;
+// let guess;
+// let attempt = 0;
 //
 // do-while loop
 
-do {
-    guess = parseInt(prompt("Guess the secret number (1-10):"));
-    attempt++
-    if(guess === secretNumber) {
-        console.log("You have guessed the lucky number")
-    } else {
-        if(guess < secretNumber) {
-            console.log("Try a higher number.")
-        }else {
-            console.log("Try a lower number");
-        }
-        console.log("You suck at guessing!!!!!! " + attempt + " total attempt")
-    }
-//
-//
-}while (guess !== secretNumber)
+// do {
+//     guess = parseInt(prompt("Guess the secret number (1-10):"));
+//     attempt++
+//     if(guess === secretNumber) {
+//         console.log("You have guessed the lucky number")
+//     } else {
+//         if(guess < secretNumber) {
+//             console.log("Try a higher number.")
+//         }else {
+//             console.log("Try a lower number");
+//         }
+//         console.log("You suck at guessing!!!!!! " + attempt + " total attempt")
+//     }
+// //
+// //
+// }while (guess !== secretNumber)
 
 // for-Loops
 

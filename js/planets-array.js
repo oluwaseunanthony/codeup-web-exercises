@@ -1,7 +1,7 @@
 (function(){
     "use strict";
 
-    var planets = [
+    let planets = [
         'Mercury',
         'Venus',
         'Earth',
