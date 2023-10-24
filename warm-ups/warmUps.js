@@ -51,12 +51,33 @@
 
 
 // 10/20
-function isEven() {
-    for (let i = 0; i <= 100; i++) {
-        if (i % 2 === 0) {
-            console.log(i)
-            // Code to execute when i is even
-        }
-    }
-}
-isEven()
+// function isEven() {
+//     for (let i = 0; i <= 100; i++) {
+//         if (i % 2 === 0) {
+//             console.log(i)
+//             // Code to execute when i is even
+//         }
+//     }
+// }
+// isEven()
+
+
+let cars=[{
+    make: "Honda" ,
+    model: "Accord",
+    color: "Black",
+},{
+    make: "chevy" ,
+    model:"impala",
+    color:"white",
+},{
+    make: "jeep" ,
+    model:"liberty",
+    color: "blue",
+}]
+let i =0
+cars.forEach(function(car){
+    console.log("Make: " + car.make);
+    console.log("Model: " + car.model);
+    console.log("Color: " + car.color);
+});

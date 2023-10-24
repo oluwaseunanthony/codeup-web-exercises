@@ -70,7 +70,7 @@ const numbers = [1, 2, 3, 4];
 
 //  spread operator (...)
 //  using spread operator to add element of one array to another array
-const arr = [3, 5, 7];
+let arr = [3, 5, 7];
 //
 // function randomNumber(min, max) {
 //     return Math.floor(Math.random() * (max - min + 1) + min);
