@@ -6,6 +6,12 @@
 </Head>
 
 <body>
+
+     after looking at a few different positions in the software development career field i realize that
+     i would still be want to be a full stack developer because it give me the chance to grow my overall
+     skill in software development. im able to maintain my skill be a well-rounded developer and i also
+     find it easier to know how something was code an for me to add on to it for better functionality.
+
 <script src=""></script>
 </body>
 </html>
