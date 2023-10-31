@@ -1,0 +1,65 @@
+body, html {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Ubuntu, sans-serif;
+}
+
+.message {
+    margin: 8px;
+    border: 2px solid lightgrey;
+    border-radius: 8px;
+    padding: .5em;
+}
+
+/*.message-info {*/
+/*    background: #CCDEFF;*/
+/*    color: #6362B3;*/
+/*}*/
+
+/*.message-success {*/
+/*    background: #CFF3DA;*/
+/*    color: #3F8C5D;*/
+/*}*/
+
+/*.message-warning {*/
+/*    background: #FCFBC9;*/
+/*    color: #B0A251;*/
+/*}*/
+
+/*.message-error {*/
+/*    background: #FAD2D6;*/
+/*    color: #AF5D6F;*/
+/*}*/
+
+:root {
+    --text-info: #6362B3;
+    --bg-info: #CCDEFF;
+    --text-success: #3F8C5D;
+    --bg-success: #CFF3DA;
+    --text-warning: #B0A251;
+    --bg-warning: #FCFBC9;
+    --text-error: #AF5D6F;
+    --bg-error: #FAD2D6;
+}
+
+.message-info {
+    color: var(--text-info);
+    background-color: var(--bg-info);
+}
+
+.message-success {
+    background: var(--bg-success);
+    color: var(--text-success);
+}
+
+.message-warning {
+    background: var(--bg-warning);
+    color: var(--text-warning);
+}
+
+.message-error {
+    background: var(--bg-error);
+    color: var(--text-error);
+}
