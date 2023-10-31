@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Forms Lecture</title>
+</head>
+<body>
+<!--  Form Tags -->
+<!--  Container to hold forms  -->
+<form method="POST" action="https://request-inspector.glitch.me/">
+
+  <label for="username">Username</label>
+  <input id="username" name="username" type="text" placeholder="user name" value="rooks4507">
+
+  <br>
+
+  <label for="password">Password</label>
+  <input id="password" name="password" type="password" placeholder="password">
+  <br>
+
+  <label for="txtarea">Text Area</label>
+  <textarea id="txtarea" name="comment"></textarea>
+
+  <br>
+
+  <input type="submit">
+  <button type="submit">Enter</button>
+
+  <br>
+
+  <label for="check">Check Box</label>
+  <br>
+  <input id="check" name="newsletter_signup" value="true" type="checkbox" checked>Sign Up For The Email Newsletter
+
+  <br>
+
+  A <input type="radio" name="quiz_question_1" value="a"><br>
+  B <input type="radio" name="quiz_question_1" value="b" disabled><br>
+  C <input type="radio" name="quiz_question_1" value="c" checked><br>
+  D <input type="radio" name="quiz_question_1" value="d"><br>
+
+  <br>
+
+  <select name="coffee_preference">
+    <option value="light">Light Roast</option>
+    <option value="dark" selected>Dark Roast</option>
+    <option value="espresso">Espresso Blend</option>
+  </select>
+
+  <br>
+
+  <input type="hidden" name="user_id" value="432">
+
+</form>
+
+
+</body>
+</html>
