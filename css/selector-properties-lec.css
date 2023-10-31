@@ -1,0 +1,102 @@
+/*select element by name(element name)*/
+h1 {
+    color: green;
+    /*text-align: center;*/
+}
+
+/* Calling the element by the ID*/
+#header2 {
+    color: darkblue;
+}
+
+/*/* Calling the element by the ClassName*/
+.content {
+    background-color: dimgrey;
+}
+
+h1, .content {
+    font-weight: lighter;
+}
+
+.fancy-header {
+    font-family: cursive;
+}
+
+.extra-large {
+    color: red;
+}
+
+/*Descendent Selector*/
+/*#container h1 {*/
+/*    color: blue;*/
+/*}*/
+
+/*Direct-child selector*/
+#container>p {
+    background: #ABC;
+}
+
+/*Combining Selectors*/
+h1.content {
+    color: yellow;
+    text-indent: 50px;
+}
+
+/* unvisited link (:link) */
+a:link {
+    color: red;
+}
+
+/* visited link (:visited) */
+a:visited {
+    color:black;
+}
+
+/* mouse hover over link (:hover) */
+a:hover {
+    color:blue;
+    font-size: 25px;
+}
+
+/* active/selected link (:active) */
+a:active {
+    color:green;
+}
+
+
+#color {
+    /*color: brown;*/
+    /*color: rgb(255, 0, 0)*/
+    color: #318c7a;
+    text-decoration: underline;
+    text-align: center;
+    font-family: Helvetica, sans-serif;
+    font-style: italic;
+    font-size: 40px;
+    font-weight: lighter;
+}
+
+html {
+    background-image: url("../img/pic1.jpg") ;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    /*background-color: rgb(22, 147, 22);*/
+
+}
+
+ul {
+    /*list-style: none;*/
+    list-style: square;
+}
+
+p {
+    border: 5px solid red;
+}
+
+em {
+    border: inherit;
+}
+
+
+
