@@ -43,7 +43,7 @@
 // do {
 //     num -=5
 //     if (num % 2== 0 && num !==0){
-//         consoe.log(`${num} is even`);
+//         console.log(`${num} is even`);
 //     } else{
 //         console.log(num);
 //     }
@@ -62,22 +62,109 @@
 // isEven()
 
 
-let cars=[{
-    make: "Honda" ,
-    model: "Accord",
-    color: "Black",
-},{
-    make: "chevy" ,
-    model:"impala",
-    color:"white",
-},{
-    make: "jeep" ,
-    model:"liberty",
-    color: "blue",
-}]
-let i =0
-cars.forEach(function(car){
-    console.log("Make: " + car.make);
-    console.log("Model: " + car.model);
-    console.log("Color: " + car.color);
-});
+// let cars=[{
+//     make: "Honda" ,
+//     model: "Accord",
+//     color: "Black",
+// },{
+//     make: "chevy" ,
+//     model:"impala",
+//     color:"white",
+// },{
+//     make: "jeep" ,
+//     model:"liberty",
+//     color: "blue",
+// }]
+// let i =0
+// cars.forEach(function(car){
+//     console.log("Make: " + car.make);
+//     console.log("Model: " + car.model);
+//     console.log("Color: " + car.color);
+// });
+
+let developers = [
+    {
+        name: "Jonathan",
+        languages: {
+            frontend: ["HTML", "JavaScript", "CSS"],
+            backend: ["Java"]
+        }
+    },
+    {
+        name: "Bonnie",
+        languages: {
+            frontend: ["JavaScript"],
+            backend: []
+        }
+    },
+    {
+        name: "Raj",
+        languages: {
+            frontend: [],
+            backend: ["C#", "Java", "Python"]
+        }
+    },
+    {
+        name: "Carmen",
+        languages: {
+            frontend: ["JavaScript", "HTML", "CSS", "React"],
+            backend: ["C#", "Java", "Python", "TypeScript"]
+        }
+    },
+]
+
+
+// function getJavaScriptLanguages(developer) {
+//     return developer.languages.frontend.filter(function (language) {
+//         return language === "JavaScript";
+//     });
+// }console.log(getJavaScriptLanguages(developers[0]))
+
+
+// function getJavaScriptDevelopers(developers) {
+//     // Use the filter method to create a new array containing developers who know JavaScript
+//     const javascriptDevelopers = developers.filter(developer => {
+//         return developer.languages.frontend.includes("JavaScript");
+//     });
+//
+//     // Extract and return the names of JavaScript developers
+//     const javascriptDeveloperNames = javascriptDevelopers.map(developer => developer.name);
+//
+//     return javascriptDeveloperNames;
+// }
+
+// function knowsJavaScript(developers) {
+//     let javascriptDevelopers = [];
+//     for (let i = 0; i < developers.length; i++) {
+//         if (developers[i].languages.frontend.includes("JavaScript")) {
+//             javascriptDevelopers.push(developers[i].name);
+//         }
+//     }
+//     return javascriptDevelopers;
+// }
+// console.log(knowsJavaScript(developers));
+
+const knowJavaScript = (arr) => {
+    let javaScriptDev=[];
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i].languages.frontend.includes("JavaScript")) {
+            javaScriptDev.push(arr[i].name);
+        }
+    }
+    console.log(javaScriptDev) ;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
