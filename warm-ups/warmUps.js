@@ -82,36 +82,36 @@
 //     console.log("Color: " + car.color);
 // });
 
-let developers = [
-    {
-        name: "Jonathan",
-        languages: {
-            frontend: ["HTML", "JavaScript", "CSS"],
-            backend: ["Java"]
-        }
-    },
-    {
-        name: "Bonnie",
-        languages: {
-            frontend: ["JavaScript"],
-            backend: []
-        }
-    },
-    {
-        name: "Raj",
-        languages: {
-            frontend: [],
-            backend: ["C#", "Java", "Python"]
-        }
-    },
-    {
-        name: "Carmen",
-        languages: {
-            frontend: ["JavaScript", "HTML", "CSS", "React"],
-            backend: ["C#", "Java", "Python", "TypeScript"]
-        }
-    },
-]
+// let developers = [
+//     {
+//         name: "Jonathan",
+//         languages: {
+//             frontend: ["HTML", "JavaScript", "CSS"],
+//             backend: ["Java"]
+//         }
+//     },
+//     {
+//         name: "Bonnie",
+//         languages: {
+//             frontend: ["JavaScript"],
+//             backend: []
+//         }
+//     },
+//     {
+//         name: "Raj",
+//         languages: {
+//             frontend: [],
+//             backend: ["C#", "Java", "Python"]
+//         }
+//     },
+//     {
+//         name: "Carmen",
+//         languages: {
+//             frontend: ["JavaScript", "HTML", "CSS", "React"],
+//             backend: ["C#", "Java", "Python", "TypeScript"]
+//         }
+//     },
+// ]
 
 
 // function getJavaScriptLanguages(developer) {
@@ -144,27 +144,77 @@ let developers = [
 // }
 // console.log(knowsJavaScript(developers));
 
-const knowJavaScript = (arr) => {
-    let javaScriptDev=[];
-    for (let i = 0; i < arr.length; i++) {
-        if (arr[i].languages.frontend.includes("JavaScript")) {
-            javaScriptDev.push(arr[i].name);
+// const knowJavaScript = (arr) => {
+//     let javaScriptDev=[];
+//     for (let i = 0; i < arr.length; i++) {
+//         if (arr[i].languages.frontend.includes("JavaScript")) {
+//             javaScriptDev.push(arr[i].name);
+//         }
+//     }
+//     console.log(javaScriptDev) ;
+// }
+//
+//
+//
+//Create a function that accepts three arguments (arrOfElements, bgColor, textColor),
+// and returns the array of objects with their corresponding properties
+// changed to the inputted values of bgColor and textColor
+
+//
+// let elements = [
+//     {
+//         el: "button",
+//         style: {
+//             backgroundColor: "white",
+//             color: "black"
+//         },
+//         content: "Submit"
+//     },
+//     {
+//         el: "p",
+//         style: {
+//             backgroundColor: "white",
+//             color: "black"
+//         },
+//         content: "Our company is better at doing company things than your company."
+//     },
+//     {
+//         el: "h2",
+//         style: {
+//             backgroundColor: "white",
+//             color: "black"
+//         },
+//         content: "Welcome Back!"
+//     }
+// ];
+//
+// function changeColors(arrOfElements, bgColor, textColor) {
+//     for (let i = 0; i < arrOfElements.length; i++) {
+//         arrOfElements[i].style.backgroundColor = bgColor;
+//         arrOfElements[i].style.color = textColor;
+//     }return arrOfElements;
+// }
+//
+//
+// // Call the function with the elements array and new colors
+// const modifiedElements = changeColors(elements, "blue", "white");
+//
+// console.log(modifiedElements); // This will show the modified array of objects
+
+
+function fizzbuzz(input) {
+    for (let i = 1; i <= input; i++) {
+        if (i % 3 === 0 && i % 5 === 0) {
+            console.log("FizzBuzz");
+        } else if (i % 3 === 0) {
+            console.log("Fizz");
+        } else if (i % 5 === 0) {
+            console.log("Buzz");
+        } else {
+            console.log(i);
         }
     }
-    console.log(javaScriptDev) ;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// Call the function with a specific value for input, e.g., 100
+fizzbuzz(100);
