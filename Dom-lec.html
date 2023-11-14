@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en" id="html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<h1 id="header">Welcome to my page!</h1>
+<!--<h1 id="header">Welcome to my page!<span> this is my span</span></h1>-->
+<p id="paraId" class="content" data-id1="here is my first set of data">Here is my content!</p>
+<p class="content" data-id1="here is my second set of data">This is pt.2 of my content</p>
+
+<form name="login">
+    <div>
+        <label for="username">Username</label>
+        <input id="username" name="username" type="text">
+    </div>
+    <div>
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password">
+    </div>
+    <div>
+        <input type="submit">
+    </div>
+</form>
+<script>
+    // Getting elements by ID name
+    let header = document.getElementById("header");
+    console.log(header)
+    // console.log(document.getElementById("html"))
+
+    //Getting elements by Class name
+    let content = document.getElementsByClassName("content");
+    console.log(content[0]);
+    for(let i = 0;  i < content.length; i++){
+        console.log(content[i]);
+    }
+    console.log(typeof content)
+
+    //Get element by tag name
+    // let tagElements = document.getElementsByTagName("p");
+    // for(let i = 0; i < tagElements.length; i++){
+    //     console.log(tagElements[i])
+    // }
+
+    //Getting form inputs
+    // var usernameInput = document.forms.login.username;
+
+    // log the value of the "username" input
+    // console.log(usernameInput.value);
+    //accessing html content
+    // let header = document.getElementById("header");
+    // header.innerHTML = "hello";
+    // header.innerText = "hello text";
+    // console.log(header.innerHTML);
+    // console.log(header.innerText);
+
+    //Changing html attributes
+    // let content = document.getElementById("header");
+    // //checking for attribute
+    // console.log(content.hasAttribute("id"));
+    // //finding value of attribute
+    // let html = document.getElementById("html");
+    // console.log(html.hasAttribute("lang"));
+    // console.log(content.getAttribute("id"));
+    // //setting or resetting attributes
+    // content.setAttribute("id", "headers");
+    // content.setAttribute("class", "headersClass");
+    // console.log(content.getAttribute("id"))
+    // console.log(content.getAttribute("class"))
+    // let para = document.getElementById("paraId");
+    // console.log(para.getAttribute("class"))
+    // para.setAttribute("class", "paraClass");
+    // console.log(para.getAttribute("class"))
+    // para.setAttribute("style", "Color: black")
+
+    // let paragraphs = document.getElementsByTagName("p");
+    // for(let i = 0; i < paragraphs.length; i++){
+    //     console.log(paragraphs[i].getAttribute("data-id1"));
+    // }
+
+    //Modify style using DOM
+    // let pTags = document.getElementsByClassName("content");
+    // for(let i = 0; i < pTags.length; i++){
+    //     console.log(pTags[i].getAttribute("data-id1"));
+    //     pTags[i].style.color = "blue";
+    //     pTags[i].style.background = "grey";
+    //     pTags[i].style["background"] = "pink";
+    // }
+
+    //querySelectors
+    // let tagSelector = document.querySelector("html");
+    // console.log(tagSelector);
+    // let idSelector = document.querySelector("#header");
+    // console.log(idSelector);
+    // let classSelector = document.querySelectorAll(".content");
+    // console.log(classSelector);
+</script>
+</body>
+</html>
