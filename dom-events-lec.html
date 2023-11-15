@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Attributes and CSS</title>
+</head>
+<body>
+<header>
+    <h1>Attributes and CSS in JS</h1>
+</header>
+<script>
+
+
+    const header = document.querySelector("header");
+    console.log(header.innerHTML);
+    header.innerHTML = "<h1>The uses of InnerHTML!</h1>" +
+        "<p>You can get and set HTML with innerHTML</p>";
+
+//     using innerText
+    document.querySelector("h1").innerText ="I control the inner text";
+
+</script>
+</body>
+</html>
