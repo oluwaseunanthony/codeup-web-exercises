@@ -29,39 +29,62 @@
 <button id="btn3">Click Me 3!</button>
 <button id="btn4">Click Me 4!</button>
 <script>
+<!--    -->
+//    const mainHeader = document.getElementById("main-header");
+//    const subHeader = document.getElementById("sub-header");
+//    const listItems = document.querySelectorAll("li");
+//    const subParagraphs = document.querySelectorAll(".sub-paragraph");
+//
+//    const button1 = document.getElementById('btn1');
+//    const button2 = document.getElementById('btn2');
+//    const button3 = document.getElementById('btn3');
+//    const button4 = document.getElementById('btn4');
+//
+//    button1.addEventListener('click', () => {
+//        mainHeader.innerHTML = "JavaScript is Cool";
+//    });
+//
+//    button2.addEventListener('click', () => {
+//        subHeader.style.color = "blue";
+//    });
+//
+//    button3.addEventListener('click', () => {
+//        listItems.forEach((item, index) => {
+//            if (index % 2 === 0) {
+//                item.style.color = "grey";
+//            }
+//            if (item.dataset.dbid === "1") {
+//                item.style.color = "blue";
+//            }
+//        });
+//    });
+//
+//    button4.addEventListener('click', () => {
+//        subParagraphs[0].textContent = "Mission Accomplished!";
+//    });
+const mainHeader = document.getElementById("main-header");
+const paragraphs = document.querySelectorAll("p");
+const listItems = document.querySelectorAll("li");
 
-    const mainHeader = document.getElementById("main-header");
-    const subHeader = document.getElementById("sub-header");
-    const listItems = document.querySelectorAll("li");
-    const subParagraphs = document.querySelectorAll(".sub-paragraph");
+mainHeader.addEventListener('click', () => {
+    mainHeader.style.backgroundColor = "lightblue";
+});
 
-    const button1 = document.getElementById('btn1');
-    const button2 = document.getElementById('btn2');
-    const button3 = document.getElementById('btn3');
-    const button4 = document.getElementById('btn4');
+paragraphs.forEach(paragraph => {
+    paragraph.addEventListener('dblclick', () => {
+        paragraph.style.fontSize = "18px";
+    });
+});
 
-    button1.addEventListener('click', () => {
-        mainHeader.innerHTML = "JavaScript is Cool";
+listItems.forEach(item => {
+    item.addEventListener('mouseover', () => {
+        item.style.color = "red";
     });
 
-    button2.addEventListener('click', () => {
-        subHeader.style.color = "blue";
+    item.addEventListener('mouseout', () => {
+        item.style.color = "black";
     });
-
-    button3.addEventListener('click', () => {
-        listItems.forEach((item, index) => {
-            if (index % 2 === 0) {
-                item.style.color = "grey";
-            }
-            if (item.dataset.dbid === "1") {
-                item.style.color = "blue";
-            }
-        });
-    });
-
-    button4.addEventListener('click', () => {
-        subParagraphs[0].textContent = "Mission Accomplished!";
-    });
+});
 </script>
 </body>
 </html>

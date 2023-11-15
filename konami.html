@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Konami Code</title>
+</head>
+<body>
+<h1>Konami Code</h1>
+
+<script>
+  "use strict";
+
+  const konamiCodeSequence = ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight", "b", "a", "Enter"];
+  let konamiCodeIndex = 0;
+
+  document.addEventListener("keyup", event => {
+    if (event.key.toLowerCase() === konamiCodeSequence[konamiCodeIndex]) {
+      konamiCodeIndex++;
+
+      if (konamiCodeIndex === konamiCodeSequence.length) {
+        // You can add your creative action here
+        alert("You have added 30 lives!");
+        // For example, you could change the background color
+        document.body.style.backgroundColor = "#00FF00"; // Green background
+        // Or play a sound, etc.
+
+        // Reset the code index for future input
+        konamiCodeIndex = 0;
+      }
+    } else {
+      // Reset if the entered key is incorrect in the sequence
+      konamiCodeIndex = 0;
+    }
+  });
+</script>
+</body>
+</html>
