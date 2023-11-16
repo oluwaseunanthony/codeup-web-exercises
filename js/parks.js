@@ -1,14 +1,14 @@
 
 
 // Function to handle click on the button
-    function highlightLastItems() {
-    const parkContainers = document.querySelectorAll('div[id^="park"]');
-
-    parkContainers.forEach(container => {
-    const lastLi = container.querySelector('ul li:last-child');
-    lastLi.classList.toggle('highlight-background');
-});
-}
+//     function highlightLastItems() {
+//     const parkContainers = document.querySelectorAll('div[id^="park"]');
+//
+//     parkContainers.forEach(container => {
+//     const lastLi = container.querySelector('ul li:last-child');
+//     lastLi.classList.toggle('highlight-background');
+// });
+// }
 
     // Function to handle click on h3 elements
     function boldFont(event) {

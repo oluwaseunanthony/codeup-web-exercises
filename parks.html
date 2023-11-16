@@ -3,6 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Parks</title>
+    <style>
+        .highlight-background {
+            background-color: yellow;
+        }
+    </style>
 
 </head>
 <body>
@@ -74,6 +79,17 @@
 
 <!-- Button to highlight the last li in each ul -->
 <button id="highlightButton">Highlight Last Items</button>
+<script>
+    // Function to handle click on the button
+    function highlightLastItems() {
+        const parkContainers = document.querySelectorAll('div[id^="park"]');
+
+        parkContainers.forEach(container => {
+            const lastLi = container.querySelector('ul li:last-child');
+            lastLi.classList.toggle('highlight-background');
+        });
+    }
+</script>
 
 
 <script src="js/parks.js"></script>
