@@ -24,67 +24,55 @@
     pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
     culpa qui officia deserunt mollit anim id est laborum.
 </p>
-<button id="btn1">Click Me 1!</button>
-<button id="btn2">Click Me 2!</button>
-<button id="btn3">Click Me 3!</button>
-<button id="btn4">Click Me 4!</button>
+
+<!-- Add buttons and attach click event listeners -->
+<button id="button1">Set inner HTML of mainHeader</button>
+<button id="button2">Set text color of subHeader</button>
+<button id="button3">Set text color on list items</button>
+<button id="button4">Change text in the first sub paragraph</button>
+
 <script>
-<!--    -->
-//    const mainHeader = document.getElementById("main-header");
-//    const subHeader = document.getElementById("sub-header");
-//    const listItems = document.querySelectorAll("li");
-//    const subParagraphs = document.querySelectorAll(".sub-paragraph");
-//
-//    const button1 = document.getElementById('btn1');
-//    const button2 = document.getElementById('btn2');
-//    const button3 = document.getElementById('btn3');
-//    const button4 = document.getElementById('btn4');
-//
-//    button1.addEventListener('click', () => {
-//        mainHeader.innerHTML = "JavaScript is Cool";
-//    });
-//
-//    button2.addEventListener('click', () => {
-//        subHeader.style.color = "blue";
-//    });
-//
-//    button3.addEventListener('click', () => {
-//        listItems.forEach((item, index) => {
-//            if (index % 2 === 0) {
-//                item.style.color = "grey";
-//            }
-//            if (item.dataset.dbid === "1") {
-//                item.style.color = "blue";
-//            }
-//        });
-//    });
-//
-//    button4.addEventListener('click', () => {
-//        subParagraphs[0].textContent = "Mission Accomplished!";
-//    });
-const mainHeader = document.getElementById("main-header");
-const paragraphs = document.querySelectorAll("p");
-const listItems = document.querySelectorAll("li");
+    "use strict";
+    // Get the main header element by id
+    const mainHeader = document.getElementById("main-header");
 
-mainHeader.addEventListener('click', () => {
-    mainHeader.style.backgroundColor = "lightblue";
-});
+    // Get the sub header element by id
+    const subHeader = document.getElementById("sub-header");
 
-paragraphs.forEach(paragraph => {
-    paragraph.addEventListener('dblclick', () => {
-        paragraph.style.fontSize = "18px";
-    });
-});
+    // Get all list items
+    const listItems = document.querySelectorAll('li');
 
-listItems.forEach(item => {
-    item.addEventListener('mouseover', () => {
-        item.style.color = "red";
+    // Get all elements with class name sub-paragraph
+    const subParagraphs = document.getElementsByClassName("sub-paragraph");
+
+    // Add click event listeners to the buttons
+    document.getElementById("button1").addEventListener("click", function () {
+        // Set inner HTML of mainHeader to "JavaScript is Cool"
+        mainHeader.innerHTML = "JavaScript is Cool";
     });
 
-    item.addEventListener('mouseout', () => {
-        item.style.color = "black";
+    document.getElementById("button2").addEventListener("click", function () {
+        // Set the text color of subHeader to blue
+        subHeader.style.color = "blue";
     });
-});
+
+    document.getElementById("button3").addEventListener("click", function () {
+        // Set text color on every other list item to grey
+        // Set text color of li with dbid = 1 to blue
+        listItems.forEach((item, index) => {
+            if (index % 2 === 0) {
+                item.style.color = "grey";
+            }
+            if (item.getAttribute("data-dbid") === "1") {
+                item.style.color = "blue";
+            }
+        });
+    });
+
+    document.getElementById("button4").addEventListener("click", function () {
+        // Change the text in the first sub paragraph to "Mission Accomplished!"
+        subParagraphs[0].innerHTML = "Mission Accomplished!";
+    });
 </script>
 </body>
 </html>
