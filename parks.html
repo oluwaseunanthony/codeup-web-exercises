@@ -77,18 +77,72 @@
     </ul>
 </div>
 
+<div class="park-section" id="park4">
+    <h3>Park 4</h3>
+    <ul>
+        <li>Fact 1</li>
+        <li>Fact 2</li>
+        <li>Fact 3</li>
+        <li>Fact 4</li>
+    </ul>
+</div>
+
+<div class="park-section" id="park5">
+    <h3>Park 5</h3>
+    <ul>
+        <li>Fact 1</li>
+        <li>Fact 2</li>
+        <li>Fact 3</li>
+        <li>Fact 4</li>
+    </ul>
+</div>
+
+<div class="park-section" id="park6">
+    <h3>Park 6</h3>
+    <ul>
+        <li>Fact 1</li>
+        <li>Fact 2</li>
+        <li>Fact 3</li>
+        <li>Fact 4</li>
+    </ul>
+</div>
+
 <!-- Button to highlight the last li in each ul -->
 <button id="highlightButton">Highlight Last Items</button>
 <script>
     // Function to handle click on the button
     function highlightLastItems() {
-        const parkContainers = document.querySelectorAll('div[id^="park"]');
+        const parkContainers = document.querySelectorAll('.park-section');
 
         parkContainers.forEach(container => {
             const lastLi = container.querySelector('ul li:last-child');
             lastLi.classList.toggle('highlight-background');
         });
     }
+
+    // Event listener for h3 elements
+    document.querySelectorAll('.park-section h3').forEach(h3 => {
+        h3.addEventListener('click', function () {
+            // Make lis underneath the clicked h3 bold
+            const ul = this.nextElementSibling;
+            if (ul) {
+                ul.querySelectorAll('li').forEach(li => {
+                    li.style.fontWeight = 'bold';
+                });
+            }
+        });
+    });
+
+    // Event listener for list items
+    document.querySelectorAll('.park-section li').forEach(li => {
+        li.addEventListener('click', function () {
+            // Make the first li of the parent ul blue
+            const parentUl = this.parentElement;
+            if (parentUl) {
+                parentUl.querySelector('li:first-child').style.color = 'blue';
+            }
+        });
+    });
 </script>
 
 
