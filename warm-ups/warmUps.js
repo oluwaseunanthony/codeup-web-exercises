@@ -202,19 +202,19 @@
 // console.log(modifiedElements); // This will show the modified array of objects
 
 
-function fizzbuzz(input) {
-    for (let i = 1; i <= input; i++) {
-        if (i % 3 === 0 && i % 5 === 0) {
-            console.log("FizzBuzz");
-        } else if (i % 3 === 0) {
-            console.log("Fizz");
-        } else if (i % 5 === 0) {
-            console.log("Buzz");
-        } else {
-            console.log(i);
-        }
-    }
-}
-
-// Call the function with a specific value for input, e.g., 100
-fizzbuzz(100);
+// function fizzbuzz(input) {
+//     for (let i = 1; i <= input; i++) {
+//         if (i % 3 === 0 && i % 5 === 0) {
+//             console.log("FizzBuzz");
+//         } else if (i % 3 === 0) {
+//             console.log("Fizz");
+//         } else if (i % 5 === 0) {
+//             console.log("Buzz");
+//         } else {
+//             console.log(i);
+//         }
+//     }
+// }
+//
+// // Call the function with a specific value for input, e.g., 100
+// fizzbuzz(100);
