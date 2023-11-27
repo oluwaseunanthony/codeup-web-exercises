@@ -12,6 +12,7 @@
   fetch("https://pokeapi.co/api/v2/pokemon/rattata")
           .then(response => response.json())
           .then(data => console.log(data.weight,data.height))
+          .catch(error => console.log(error))
 
 
 
