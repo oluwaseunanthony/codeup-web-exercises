@@ -1,0 +1,62 @@
+<!--
+1. HTTP or Hypertext Transfer Protocol
+    * Is the foundation of data communication on the world wide web.
+    * It defines the rules for how messages (requests and responses) are formatted and transmitted between web browsers and web servers.
+    * It's the protocol that enables the retrieval of web pages and the exchange of data on the internet.
+    * For example, when a user wants to view a web page, their web browser (in this case the web browser is the client) sends an HTTP request to the server (which the server is the remote computer) hosting the desired content. The server then responds with an HTTP response, providing the requested data or indicating an error.
+
+Some common type of request (also called HTTP Methods) are
+    * GET
+        - Purpose: Is to retrieve data from the server
+        - Example: Fetching a webpage, retrieving data from a server
+    * POST
+        - Purpose: Is to submit data to be processed to a specified resource
+        - Example: Submitting a form, uploading a file.
+    * PUT
+        - Purpose: Is to update a resource or create a new resource if it doesn't exist
+        - Example: Updating a user's profile, uploading a resource to a specific URL
+    * PATCH
+        - Purpose: Is to apply partial modifications to a resource
+        - Example: Updating specific fields of an existing resource
+    * DELETE
+        - Purpose: Is to remove or delete
+        - Example: Removing a file, deleting a user account.
+
+2. What is an API
+    * API stands for "Application Programming Interface" and is a way of describing software design.
+    *  At the highest level an API is any application with a set of instruction for how programmers can interact with getting data.
+    * APIs can be implemented using HTTP as a communication protocol. They define endpoints (URLs) and rules for how data should be requested and sent.
+    * There are APIs for (weather, maps, stocks, books, sports, art, games, movies, etc...). Some are free, some are somewhat expensive and some are really expensive.
+    * Here is a good list of Free Apis (https://github.com/public-apis/public-apis)
+
+    - API Data
+    * An API will receive a scripted request and send a response. That data will generally be in one of two forms: XML or JSON.
+    * XML stands for "eXtensible Markup Language" and is the granddaddy of serialized data formats (itself based on HTML). XML is fat, ugly and cumbersome to parse. It is increasingly the less common of the two formats you'll encounter.
+        * XML looks like this:
+            <users>
+              <user id="23">
+                <name><![CDATA[Bob]]></name>
+              </user>
+              <user id="72">
+                <name><![CDATA[Tim]]></name>
+              </user>
+            </users>
+
+    * JSON or JavaScript Object Notation is structured data (i.e., arrays and object). JSON has become a universal standard for sending and receiving data across the web. It is light-weight, easy-to-read and quick to parse.
+    * JSON is based off the JavaScript Object syntax, and is just a long string of characters. One notable difference is that double quotes must always be used for keys and values.
+        * JSON looks like this:
+            {
+                "users": [{ "name": "Bob", "id": 23 }, { "name": "Tim", "id": 72 }],
+                "content": "This is a piece of content"
+            }
+
+3. What is AJAX or Asynchronous JavaScript and XML.
+    * AJAX is the concept of communicating with a server, sending or retrieving data, without refreshing the current webpage.
+    * AJAX uses HTTP to send requests to APIs. These requests can retrieve data in various formats, not just XML, despite the name.
+    * For example, back in the early internet day, whenever we are making a request to a page, the entire page had to refresh and reload. Whenever we change some type of data the entire page had to reload. Imagine we were on instagram's website and everytime we hit a like instead of it just turning blue and just incrementing, the entire page refreshed, and then it take you back to where you were, and it was incrementing. If you had to like again or de-like it would refresh again. You can imagine that was really annoying. So ajax came around for way for us to make request and not have our page refresh, it was a way for us to asynchronously go out and do some type of request and let the rest of our javascript run while request was happening.
+
+In simpler terms:
+    * HTTP is the protocol that enables communication on the web.
+    * API is a set of rules that allows different software to talk to each other, often implemented using HTTP.
+    * AJAX is a technique that uses JavaScript and HTTP to make dynamic requests to a server without reloading the entire web page. It often involves interacting with APIs to get or send data.
+-->
