@@ -1,6 +1,3 @@
-
-
-
 <!--
 1. HTTP or Hypertext Transfer Protocol
     * Is the foundation of data communication on the world wide web.
@@ -64,64 +61,190 @@ In simpler terms:
     * AJAX is a technique that uses JavaScript and HTTP to make dynamic requests to a server without reloading the entire web page. It often involves interacting with APIs to get or send data.
 -->
 
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
 
-<!--var userLogin = () =>-->
-<!--{-->
-<!--//change these credentials to match the tenantId you have been using-->
-<!--//once you have confirmed that you can log in with the given credential.-->
-<!--//the bug will prompt you to do so before you can clear all bugs.-->
-<!--var payload = {-->
-<!--email: "anthonyoluwaseun@example.com",-->
-<!--password: "ADEjumo8732GE!",-->
-<!--tenantId: "U04U41FH6KT",-->
-<!--};-->
-<!--const config = {-->
-<!--method: "POST",-->
-<!--url: "https://api.remotebootcamp.dev/api/users/login",-->
-<!--data: payload,-->
-<!--crossdomain: true,-->
-<!--headers: { "Content-Type": "application/json" },-->
-<!--};-->
+<form id="searchForm">
+    <input type="text" id="searchBar" placeholder="Please enter a PokeName">
+    <input type="submit" id="searchButton" value="Search">
+</form>
 
-<!--return axios(config)-->
-<!--.then(function (data)-->
-<!--{-->
-<!--console.log(data);-->
-<!--})-->
-<!--.catch(function (data)-->
-<!--{-->
-<!--console.error(data);-->
-<!--});-->
-<!--// var aPromise = axios(config);-->
-<!--// does not wait-->
-<!--// var afterFirstThen = aPromise.then(function(data))-->
-<!--// {-->
-<!--// console.log(data)-->
-<!--// });-->
-<!--// afterFirstThen.catch(function(data)){-->
-<!--//              console.warn(data)-->
+<div class="container"></div>
 
-<!--//-->
-<!--//     });-->
-<!--//-->
-<!--};-->
+<img src="" alt="">
 
-<!--var getAuthors = () =>-->
-<!--{-->
-<!--const config = {-->
-<!--method: "GET",-->
-<!--url: "https://api.remotebootcamp.dev/api/authors",-->
-<!--crossdomain: true,-->
-<!--headers: { "Content-Type": "application/json" },-->
-<!--};-->
+<p class="books"></p>
 
-<!--return axios(config)-->
-<!--.then(function (response)-->
-<!--{-->
-<!--console.log(response.data);-->
-<!--})-->
-<!--.catch(function (response)-->
-<!--{-->
-<!--console.error(response);-->
-<!--});-->
-<!--};-->
+<script>
+
+    // // basic fetch
+    // fetch("https://pokeapi.co/api/v2/pokemon/charmander")
+    //     .then(function(response) {
+    //         return (response.json())
+    //     })
+    //     .then(function (data) {
+    //         console.log(data)
+    //     })
+    // // example of how callback function and arrow functions cleans up the code nicely.
+    // fetch("https://pokeapi.co/api/v2/pokemon/charmander")
+    //     .then(response => response.json())
+    //     .then(data => console.log(data))
+    //     .catch(error => console.log("Error" + error))
+    //     .finally(console.log("This will run no matter what!"))
+
+
+    // response.ok
+    // fetch("https://pokeapi.co/api/v2/pokemon/charmander")
+    //     .then( response => {
+    //         if(!response.ok) {
+    //             console.log("unsuccessfull")
+    //         }
+    //        return response.json()
+    //         }
+    //     )
+    //     .then( data => console.log("At last, we have the JSON data we want: " + data))
+    //     .catch( error => {
+    //         console.log("ERROR!!!");
+    //         console.log("Error message: " + error.message);
+    //     })
+    //     .finally( () => console.log("This function always runs!"));
+
+    // show async behavior in action
+    console.log(1);
+
+    const options = {
+        method: "GET",
+        headers: {"Content-Type": "application/json"}
+    }
+
+    fetch("https://pokeapi.co/api/v2/pokemon/charmander", options)
+        .then(response => {
+            // console.log(2);
+            return (response.json())
+        })
+        .then(data => console.log(data));
+    console.log(3);
+
+
+    const githubPromise = fetch('https://api.github.com/repositories');
+    const bitbucketPromise = fetch('https://api.bitbucket.org/2.0/repositories');
+
+    Promise.all([githubPromise, bitbucketPromise])
+        .then(response => {
+            // here data is an array of the resolved values from each promise
+            // we can now do something with both pieces of data
+            const [githubData, bitbucketData] = response;
+
+            console.log("Github data", githubData)
+            console.log("Bitbucket data", bitbucketData)
+
+        })
+        .catch(error => {
+            // handle errors
+            console.log("Error", error)
+        });
+
+
+    fetch('https://api.github.com/users')
+        .then(response => response.json())
+
+        .then(users => {
+            console.log(users)
+            users.forEach(user => {
+                console.log(user.login)
+                console.log(user.type)
+
+            })
+        })
+        .catch(error => console.error(error));
+
+
+    function getGithubUsernames() {
+        return fetch('https://api.github.com/users')
+            .then(response => response.json())
+    }
+
+    // later on...
+
+    getGithubUsernames().then(users => {
+        users.forEach(userObj => {
+            // do something with each username
+            console.log(userObj.login);
+        });
+    }).catch(error => console.error(error));
+
+    // You Do:
+    // For rattata pokemon character, I want you to make a Ajax call and console.log its weight and height
+
+
+    fetch("https://pokeapi.co/api/v2/pokemon/rattata")
+        .then(res => res.json())
+        .then(data => {
+            console.log(data.height)
+            console.log(data.weight)
+        })
+        .catch(err => console.log(err))
+
+
+    function createPokemonElements(data) {
+        // console.log(data.name)
+        const paragraph = document.createElement("p");
+        paragraph.innerHTML = data.name;
+        let container = document.querySelector(".container");
+        container.appendChild(paragraph)
+
+        //     image
+        const image = document.createElement("img");
+        image.src = data.sprites.front_shiny;
+        container.appendChild(image);
+        image.style.height = "200px";
+    }
+
+    function onFail(error) {
+        console.log("Error", error)
+    }
+
+
+
+    let searchFrom = document.querySelector("#searchForm");
+
+    searchFrom.addEventListener("submit", (event) => {
+        event.preventDefault();
+        let input = document.querySelector("#searchBar").value
+        // console.log(input)
+
+        fetch(`https://pokeapi.co/api/v2/pokemon/${input}`)
+            .then(res => res.json())
+            .then(data => createPokemonElements(data))
+            .catch(onFail)
+    })
+
+    function processBooks(book) {
+        for(let i = 0; i < book.length; i++) {
+            document.querySelector(".books").innerText += ` ${book[i].title} \n`;
+        }
+    }
+
+
+    fetch("data/data.json")
+        .then(res => res.json())
+        .then(data => processBooks(data))
+
+
+
+
+
+
+</script>
+<script src="js/keys.js"></script>
+<script src="js/index.js"></script>
+</body>
+</html>

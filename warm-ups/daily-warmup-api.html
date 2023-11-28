@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="container"></div>
+
+<img src="" alt="">
+
+<p class="books"></p>
+
+<script>
+  // fetch("https://pokeapi.co/api/v2/pokemon/charmander")
+  //         .then( response => {
+  //           // can't use the response's data yet. have to json() it
+  //           return response.json();
+  //         })
+  //         .then( data => {
+  //           // at this point, we can use the response's data
+  //           console.log(data);
+  //         })
+  //         .catch(err => console.log(err))
+
+
+  // function createPokemonElements(data) {
+    // console.log(data.name)
+    // const paragraph = document.createElement("p");
+    // paragraph.innerHTML = data.name;
+    // let container = document.querySelector(".container");
+    // container.appendChild(paragraph)
+
+    //     image
+  //   const image = document.createElement("img");
+  //   image.src = data.sprites.front_shiny;
+  //   container.appendChild(image);
+  //   image.style.height = "200px";
+  // }
+  //
+  // function onFail(error) {
+  //   console.log("Error", error)
+  // }
+
+
+  // Fetch Pokémon data
+  const pokemonName = 'charmander'; // Replace with your desired Pokémon
+  fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`)
+          .then(response => response.json())
+          .then(data => {
+            // Retrieve image URL
+            const imageUrl = data.sprites.front_default; // Or any other sprite URL you prefer
+
+            // Display the image
+            const imgElement = document.createElement('img');
+            imgElement.src = imageUrl;
+            document.querySelector(".container").appendChild(imgElement); // Append the image to the HTML body or any desired element
+          })
+          .catch(error => console.log(error));
+</script>
+
+</body>
+</html>
