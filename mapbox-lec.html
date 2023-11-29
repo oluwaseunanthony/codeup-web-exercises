@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>First Mapbox Map</title>
+  <!-- Mapbox CSS -->
+  <link href='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css' rel='stylesheet' />
+ <style>
+  #map {
+  /* the width and height may be set to any size */
+  width: 100%;
+  height: 700px;
+  }
+  </style>
+</head>
+<body>
+
+<h1>My First Mapbox Map!</h1>
+
+<!-- The HTML element that serves as the Mapbox container -->
+<div id='map'></div>
+
+<script src='js/keys.js'> </script>
+<!-- Mapbox JS -->
+<script src='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.js'></script>
+<!-- Custom JS -->
+<script>
+  mapboxgl.accessToken = MAPBOX_API_KEY;
+  // creating a new map
+  const map = new mapboxgl.Map({
+    // setting the location for my map depending on the id in my html
+    container: 'map', // container ID
+    // this is setting my mPBOX STYLING
+    style: 'mapbox://styles/mapbox/dark-v11', // style URL
+    // THIS DECIDES HOW ZOOMED IN MY MAP IS
+    zoom: 10, // starting zoom
+    // this adds the center to my mao using the lng, lat
+    center: [ -96.808891, 32.779167] // [lng, lat]
+  });
+  const marker = new mapboxgl.Marker()
+          // adding marker to specific [lng,lat]
+          .setLngLat([-96.808891, 32.779167])
+          .addTo(map);
+
+  // setting a pop up object
+  let popup = new mapboxgl.Popup()
+      // adding popup to specific [lng,lat]
+          .setLngLat([-96.808891, 32.779167])
+      // setting the content of my popup
+          .setHTML("<p>Codeup Rocks!</p>")
+          // add the popup to my map
+          .addTo(map);
+  const codeupPopup = new mapboxgl.Popup()
+      .setHTML("<p>Welcome to Dallas!</p>");
+
+  marker.setPopup(codeupPopup);
+
+</script>
+</body>
+</html>
