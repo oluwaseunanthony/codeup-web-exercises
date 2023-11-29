@@ -2,9 +2,71 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Favorite Restaurants Map</title>
+    <!-- Mapbox CSS -->
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css' rel='stylesheet' />
+    <style>
+        #map {
+            /* the width and height may be set to any size */
+            width: 100%;
+            height: 700px;
+        }
+    </style>
 </head>
 <body>
 
+<h1>Favorite Restaurants Map</h1>
+
+<!-- The HTML element that serves as the Mapbox container -->
+<div id='map'></div>
+
+<script src='js/keys.js'></script>
+<script src="js/mapbox-geocoder-utils.js"></script>
+<!-- Mapbox JS -->
+<script src='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.js'></script>
+<!-- Custom JS -->
+<script>
+    mapboxgl.accessToken = MAPBOX_API_KEY;
+
+    // Array of restaurant objects
+    const restaurants = [
+        { name: 'McDonalds', address: ' 1000 Commerce St, Dallas, TX 75202', location: [-96.802994, 32.778679] },
+        { name: 'Papa Johns', address: ' 1127 N Beckley Ave, Dallas, TX 75203', location: [-96.823320, 32.757510] },
+        { name: 'P.F. Chang s', address: '8687 N Central Expy Ste 225, Dallas, TX 75225', location: [-96.770699,32.868881] },
+    ];
+
+    // creating a new map
+    const map = new mapboxgl.Map({
+        container: 'map', // container ID
+        style: 'mapbox://styles/mapbox/dark-v10', // style URL
+        zoom: 10, // starting zoom
+        center: restaurants[0].location, // set the center to the first restaurant's location
+    });
+
+    // Loop through each restaurant and add a marker and popup
+    restaurants.forEach(restaurant => {
+        const marker = new mapboxgl.Marker()
+            .setLngLat(restaurant.location)
+            .addTo(map);
+
+        const popup = new mapboxgl.Popup({ closeOnClick: false, closeButton: false })
+            .setHTML(`<p>${restaurant.name}</p>`)
+            .addTo(map);
+
+        // Open the popup when the marker is clicked
+        marker.setPopup(popup);
+    });
+
+    // Function to change the zoom level programmatically
+    function changeZoom(zoomLevel) {
+        map.setZoom(zoomLevel);
+    }
+
+    // Example: Change the zoom level after 3 seconds (you can call this function based on your requirements)
+    setTimeout(() => {
+        changeZoom(5);
+    }, 10000);
+
+</script>
 </body>
 </html>
