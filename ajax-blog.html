@@ -33,44 +33,26 @@
 <script>
     "use strict";
     // Function to fetch and display blog posts
-    function fetchAndDisplayBlogPosts() {
-        // Fetch blog.json file
-        fetch("data/blog.json")
-            .then(response => {
-                // Check if the response is okay
-                if (!response.ok) {
-                    throw new Error("Network response was not ok");
-                }
-                return response.json();
+    const postsDiv = document.querySelector("#posts");
+
+    fetch("data/blog.json")
+        .then(response => response.json())
+        .then(data => {
+            console.log(data)
+            data.forEach(blogPost => {
+                const postDiv = document.createElement("div");
+                postDiv.innerHTML = `
+                <h2>${blogPost.title}</h2>
+                <p>${blogPost.content}</p>
+                <p>${blogPost.date}</p>
+                `
+
+                postsDiv.appendChild(postDiv)
             })
-            .then(data => {
-                // Display the blog posts
-                displayBlogPosts(data);
-            })
-            .catch(error => {
-                console.error("Error during fetch:", error);
-            });
-    }
+        })
 
-    // Function to display blog posts in the #posts div
-    function displayBlogPosts() {
-        const postsContainer = document.getElementById("posts");
 
-        data.forEach(post => {
-            const postElement = document.createElement("div");
-            postElement.className = "post";
-            postElement.innerHTML = `
-                <h2>${post.title}</h2>
-                <p>${post.content}</p>
-                <p>Author: ${post.author}</p>
-                <hr>
-            `;
-            postsContainer.appendChild(postElement);
-        });
-    }
 
-    // Initial load of blog posts
-    fetchAndDisplayBlogPosts();
 </script>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>

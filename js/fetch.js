@@ -1,21 +1,16 @@
-function getLastCommitDate(username,token){
-        return fetch(input`https://api.github.com/users/${username}/events`,
-            {headers: {'Authorization': "token"+ token
-            }
-            })
-            .then(response => response.json())
-    }
-
-
-    getLastCommitDate(username`seybautista`,GITHHUB_API_KEY)
-        .then(data)
-
-// Example usage:
-const username = "your-github-username";
-getLastCommitDate(username)
-    .then(date => {
-        console.log(`Last commit date for ${username}: ${date.toISOString()}`);
+function getLastCommit(username, token) {
+    return fetch(`https://api.github.com/users/${username}/events/public`, {
+        headers: {
+            'Authorization': "token" + token
+        }
     })
-    .catch(error => {
-        console.error(`Error: ${error.message}`);
-    });
+        .then(response => response.json())
+}
+
+getLastCommit('sevbautista', GITHUB_API_KEY)
+    .then(data => {
+        console.log(data)
+        let commit = data.filter(event => event.type === "PushEvent")
+        console.log(commit);
+        console.log(new Date(commit[0].created_at));
+    })
