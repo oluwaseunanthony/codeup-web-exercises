@@ -1,15 +1,50 @@
+<!--This file is weather_map.html-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
+  <link href='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css' rel='stylesheet' />
+  <link rel="stylesheet" href="css/weather_map.css">
+<!--  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>-->
+
   <title>Weather Map</title>
 </head>
 <body>
-<div id="app">
-  <!-- Your weather information and forecast will be displayed here -->
+
+
+<div class="navbar">
+  <label for="search">Weather Map</label>
+  <input type="text" id="search">
+  <button id="sub" type="button">Search</button>
 </div>
-<script src="app.js"></script>
+
+<div id="app">
+  <div id="weather-container">
+    <!-- Current weather information will be displayed here -->
+    <h2>Current Weather</h2>
+    <div id="current-weather"></div>
+
+    <!-- Five-day forecast will be displayed here -->
+    <h2>5-Day Forecast</h2>
+    <div id="forecast"></div>
+  </div>
+
+  <!-- Mapbox map will be displayed here -->
+  <div id="map"></div>
+</div>
+
+<div id="twitter-feed-container"></div>
+
+
+
+<script src='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.js'></script>
+<script src='js/keys.js'></script>
+<script src="js/weather_map.js"></script>
+<!--<script src="js/weather_map_geocoder.js"></script>-->
+
 </body>
 </html>
+
+

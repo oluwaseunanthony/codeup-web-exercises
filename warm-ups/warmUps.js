@@ -221,3 +221,75 @@
 
 
 
+// Function to calculate the absolute difference between the sums of the primary and secondary diagonals
+function diagonalDifference(arr) {
+    // Get the length of the array (assuming it's a square matrix)
+    let n = arr.length;
+
+    // Variables to store the sums of the primary and secondary diagonals
+    let d1 = 0;
+    let d2 = 0;
+
+    // Loop through each element of the matrix
+    for(let i = 0; i < n; i++){
+        for(let j = 0; j < n; j++){
+
+            // Check if the current element is on the primary diagonal
+            if(i === j) {
+                // Add the element to the sum of the primary diagonal
+                d1 += arr[i][j];
+            }
+
+            // Check if the current element is on the secondary diagonal
+            if(i + j === n - 1){
+                // Add the element to the sum of the secondary diagonal
+                d2 += arr[i][j];
+            }
+        }
+    }
+
+    // Calculate and return the absolute difference between the sums of the diagonals
+    return Math.abs(d1 - d2);
+}
+
+// Example usage:
+const matrix = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+];
+
+const result = diagonalDifference(matrix);
+console.log(result); // Output: 0 (|15 - 15| = 0 in this example)
+
+
+// In the provided code, the variable j is used as a loop variable to iterate over the columns of the matrix. The outer loop variable i iterates over the rows, and the inner loop variable j iterates over the columns.
+//
+//     Here's the relevant part of the code where j is used:
+//
+// javascript
+// Copy code
+// for(let i = 0; i < n; i++){
+//     for(let j = 0; j < n; j++){
+//         // ... (code inside the loop)
+//     }
+// }
+// In this nested loop structure, the outer loop (for(let i = 0; i < n; i++)) is responsible for iterating over the rows of the matrix, and the inner loop (for(let j = 0; j < n; j++)) is responsible for iterating over the columns.
+//
+//     So, in the context of this code, j is the column index. The variable i represents the current row, and j represents the current column as the loops traverse through the elements of the 2D array (matrix).
+// function diagonalDifference(arr) {
+//     let n = arr.length;
+//     let leftToRightSum = 0;
+//     let rightToLeftSum = 0;
+//
+//     for (let i = 0; i < n; i++) {
+//         // Sum the elements on the left-to-right diagonal (row index = column index)
+//         leftToRightSum += arr[i][i];
+//
+//         // Sum the elements on the right-to-left diagonal (row index + column index = n - 1)
+//         rightToLeftSum += arr[i][n - 1 - i];
+//     }
+//
+//     // Calculate and return the absolute difference between the sums of the diagonals
+//     return Math.abs(leftToRightSum - rightToLeftSum);
+// }

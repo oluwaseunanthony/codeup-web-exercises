@@ -1,70 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>First Mapbox Map</title>
-  <!-- Mapbox CSS -->
-  <link href='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css' rel='stylesheet' />
- <style>
-  #map {
-  /* the width and height may be set to any size */
-  width: 100%;
-  height: 700px;
-  }
-  </style>
+    <meta charset="UTF-8">
+    <title>First Mapbox Map</title>
+    <!-- Mapbox CSS -->
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css' rel='stylesheet' />
+    <style>
+        #map {
+            /* the width and height may be set to any size */
+            width: 100%;
+            height: 500px;
+        }
+    </style>
 </head>
 <body>
 
 <h1>My First Mapbox Map!</h1>
 
+<label for="search">Search</label>
+<input type="text" id="search">
+<button id="sub" type="button">Search</button>
+
 <!-- The HTML element that serves as the Mapbox container -->
 <div id='map'></div>
 
-<script src='js/keys.js'> </script>
+
+<script src="js/keys.js"></script>
 <script src="js/mapbox-geocoder-utils.js"></script>
 <!-- Mapbox JS -->
 <script src='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.js'></script>
 <!-- Custom JS -->
 <script>
-  mapboxgl.accessToken = MAPBOX_API_KEY;
-  // creating a new map
-  const map = new mapboxgl.Map({
-    // setting the location for my map depending on the id in my html
-    container: 'map', // container ID
-    // this is setting my mPBOX STYLING
-    style: 'mapbox://styles/mapbox/dark-v11', // style URL
-    // THIS DECIDES HOW ZOOMED IN MY MAP IS
-    zoom: 10, // starting zoom
-    // this adds the center to my mao using the lng, lat
-    center: [ -96.808891, 32.779167] // [lng, lat]
-  });
-  const marker = new mapboxgl.Marker()
-          // adding marker to specific [lng,lat]
-          .setLngLat([-96.808891, 32.779167])
-          .addTo(map);
+    mapboxgl.accessToken = MAPBOX_API_KEY;
+    // creating a new map
+    const map = new mapboxgl.Map({
+        // setting the location for my map depending on the id in my html
+        container: 'map', // container ID
+        // this is setting my mapboxgl styling
+        style: 'mapbox://styles/mapbox/streets-v12', // style URL
+        // this decides how zoomed in my map is
+        zoom: 10, // starting zoom
+        // this add the center to my map using the lng, lat
+        center: [-98.4916, 29.4252] // [lng, lat]
+    });
 
-  // setting a pop up object
-  let popup = new mapboxgl.Popup()
-      // adding popup to specific [lng,lat]
-          .setLngLat([-96.808891, 32.779167])
-      // setting the content of my popup
-          .setHTML("<p>Codeup Rocks!</p>")
-          // add the popup to my map
-          .addTo(map);
-  const codeupPopup = new mapboxgl.Popup()
-      .setHTML("<p>Welcome to Dallas!</p>");
+    // setting a marker object
+    const marker = new mapboxgl.Marker()
+        // adding marker to specific [lng, lat]
+        .setLngLat([-96.80330059331894, 32.777946644194934])
+        // adding marker to map
+        .addTo(map);
 
-  marker.setPopup(codeupPopup);
+    // setting a popup object
+    let popup = new mapboxgl.Popup()
+        // adding popup to specific [lng, lat]
+        .setLngLat([-96.80330059331894, 32.777946644194934])
+        // setting the content of my popup
+        .setHTML("<p>Codeup Rocks!</p>")
+        // set the maximum width of the popup
+        .setMaxWidth("300px")
+        // adds the popup to my map
+        .addTo(map);
 
-  geocode("900 jackson st unit 410,dallas, tx 75202",MAPBOX_API_KEY)
-      .then(result=> console.log(result));
-        map.setCenter(result);
-         map.setZoom(10);
-  reverseGeocode({lng: -98.4861, lat: 29.4260}, MAPBOX_API_KEY).
-      .then(result => { console.log(result)
-          map.setCenter(result);
-          map.setZoom(10)})
 
+    const codeupPopup = new mapboxgl.Popup()
+        .setHTML("<p>Welcome to San Antonio!</p>");
+
+    marker.setPopup(codeupPopup);
+
+
+    geocode("San Antonio", MAPBOX_API_KEY)
+        .then(result => { console.log(result)
+            map.setCenter(result);
+            map.setZoom(10)})
+
+
+    // reverse geocode method from mapbox-geocoder-utils.js
+    reverseGeocode({lng: -98.4861, lat: 29.4260}, MAPBOX_API_KEY).
+    then( results => console.log(results) );
+
+
+
+    const alamoInfo = {
+        address: "The Dallas World Aquarium, Dallas",
+        popupHTML: "<p>Welcome to the Alamo!</p>"
+    };
+
+    function placeMarkerAndPopup(info, token, map) {
+        geocode(info.address, token).then( coords => {
+            console.log(coords)
+            let popup = new mapboxgl.Popup()
+                .setHTML(info.popupHTML);
+            let marker = new mapboxgl.Marker()
+                .setLngLat(coords)
+                .addTo(map)
+                .setPopup(popup);
+            popup.addTo(map);
+        });
+    }
+
+    placeMarkerAndPopup(alamoInfo, MAPBOX_API_KEY, map);
+
+
+    //     Search Functionality
+    document.getElementById("sub").addEventListener("click", function() {
+        let currentLocation = geocode(document.getElementById("search").value, MAPBOX_API_KEY);
+
+        currentLocation.then(result => {
+            console.log(result)
+            map.setCenter([result[0], result[1]])
+        })
+
+    })
 
 </script>
 </body>
