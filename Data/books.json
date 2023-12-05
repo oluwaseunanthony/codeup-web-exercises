@@ -1,0 +1,70 @@
+{
+  "books": [
+    {
+      "id": 1,
+      "title": "To Kill a Mockingbird",
+      "authorId": 1,
+      "publishedYear": 1960,
+      "genre": "Fiction",
+      "summary": "A story of a young girl confronting the harsh realities of social inequality and racial injustice.",
+      "ISBN": "9780446310789"
+    },
+    {
+      "id": 2,
+      "title": "1984",
+      "authorId": 2,
+      "publishedYear": 1949,
+      "genre": "Dystopian Fiction",
+      "summary": "A chilling portrayal of how a society dominated by a totalitarian government gives rise to a culture of fear and paranoia.",
+      "ISBN": "9780451524935"
+    },
+    {
+      "id": 3,
+      "title": "Brave New World",
+      "authorId": 3,
+      "publishedYear": 1932,
+      "genre": "Dystopian Fiction",
+      "summary": "A grim dystopian view of a future society where life is pain-free but meaningless.",
+      "ISBN": "9780060850524"
+    },
+    {
+      "id": 4,
+      "title": "Moby Dick",
+      "authorId": 4,
+      "publishedYear": 1851,
+      "genre": "Adventure Fiction",
+      "summary": "The epic tale of the relentless pursuit of the great white whale.",
+      "ISBN": "9780142000083"
+    }
+  ],
+  "authors": [
+    {
+      "id": 1,
+      "name": "Harper Lee",
+      "birthYear": 1926,
+      "deathYear": 2016,
+      "nationality": "American"
+    },
+    {
+      "id": 2,
+      "name": "George Orwell",
+      "birthYear": 1903,
+      "deathYear": 1950,
+      "nationality": "British"
+    },
+    {
+      "id": 3,
+      "name": "Aldous Huxley",
+      "birthYear": 1894,
+      "deathYear": 1963,
+      "nationality": "British"
+    },
+    {
+      "id": 4,
+      "name": "Herman Melville",
+      "birthYear": 1819,
+      "deathYear": 1891,
+      "nationality": "American"
+    }
+  ]
+}

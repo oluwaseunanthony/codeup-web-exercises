@@ -10,3 +10,10 @@ function displayGreeting() {
 
 // Assuming you have a button with id "generateGreetingBtn" in your HTML
 document.getElementById("generateGreetingBtn").addEventListener("click", displayGreeting);
+
+
+// document.querySelect('form').addEventListener("submit", event=>{
+//     event.preventDefault();
+//     document.querySelect("a").innertext= `${randomGreeting} ${event.target[0].value}`;
+//     event.target[0].value =""
+// });
